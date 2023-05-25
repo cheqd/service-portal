@@ -1,18 +1,21 @@
 {
-  "name": "@cheqd/credential-service-frontend",
+  "name": "@cheqd/service-portal",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cheqd API Service Portal",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cheqd/credential-service.git"
+    "url": "git+https://github.com/cheqd/service-portal.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+	"ssi",
+	"identity",
+	"verifiable-credentials"
+  ],
+  "author": "Cheqd Foundation Limited",
   "bugs": {
-    "url": "https://github.com/cheqd/credential-service/issues"
+    "url": "https://github.com/cheqd/service-portal/issues"
   },
-  "homepage": "https://github.com/cheqd/credential-service#readme",
+  "homepage": "https://github.com/cheqd/service-portal#readme",
   "scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -66,9 +69,5 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	},
-	"engines": {
-		"npm": ">=8.0.0 <=9",
-		"node": ">=16 <=19"
 	}
 }

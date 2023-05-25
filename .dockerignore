@@ -1,0 +1,14 @@
+# Skip unncecessary folders
+**/.git
+**/.github
+**/node_modules
+**/.svelte-kit
+
+# Skip unnecessary files
+**/*.md
+Dockerfile
+docker-compose.yml
+
+# Exceptions
+!LICENSE
+!README.md

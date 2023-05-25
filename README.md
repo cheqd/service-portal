@@ -1,14 +1,65 @@
-# Default .github community repo for cheqd
+# API Service Portal
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/cheqd/.github?color=green&label=stable%20release&style=flat-square)](https://github.com/cheqd/.github/releases/latest) ![GitHub Release Date](https://img.shields.io/github/release-date/cheqd/.github?color=green&style=flat-square) [![GitHub license](https://img.shields.io/github/license/cheqd/.github?color=blue&style=flat-square)](https://github.com/cheqd/.github/blob/main/LICENSE)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/cheqd/service-portal?color=green&label=stable%20release&style=flat-square)](https://github.com/cheqd/service-portal/releases/latest) ![GitHub Release Date](https://img.shields.io/github/release-date/cheqd/service-portal?color=green&style=flat-square) [![GitHub license](https://img.shields.io/github/license/cheqd/service-portal?color=blue&style=flat-square)](https://github.com/cheqd/service-portal/blob/main/LICENSE)
 
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/cheqd/.github?include_prereleases&label=dev%20release&style=flat-square)](https://github.com/cheqd/.github/releases/) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/cheqd/.github/latest?style=flat-square) [![GitHub contributors](https://img.shields.io/github/contributors/cheqd/.github?label=contributors%20%E2%9D%A4%EF%B8%8F&style=flat-square)](https://github.com/cheqd/.github/graphs/contributors)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/cheqd/service-portal?include_prereleases&label=dev%20release&style=flat-square)](https://github.com/cheqd/service-portal/releases/) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/cheqd/service-portal/latest?style=flat-square) [![GitHub contributors](https://img.shields.io/github/contributors/cheqd/service-portal?label=contributors%20%E2%9D%A4%EF%B8%8F&style=flat-square)](https://github.com/cheqd/service-portal/graphs/contributors)
 
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/cheqd/.github/dispatch.yml?label=workflows&style=flat-square)](https://github.com/cheqd/.github/actions/workflows/dispatch.yml) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/cheqd/.github/codeql.yml?label=CodeQL&style=flat-square)](https://github.com/cheqd/.github/actions/workflows/codeql.yml) ![GitHub repo size](https://img.shields.io/github/repo-size/cheqd/.github?style=flat-square)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/cheqd/service-portal/dispatch.yml?label=workflows&style=flat-square)](https://github.com/cheqd/service-portal/actions/workflows/dispatch.yml) [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/cheqd/service-portal/codeql.yml?label=CodeQL&style=flat-square)](https://github.com/cheqd/service-portal/actions/workflows/codeql.yml) ![GitHub repo size](https://img.shields.io/github/repo-size/cheqd/service-portal?style=flat-square)
 
 ## ℹ️ Overview
 
-Default template for cheqd repos
+This repository provides a front-end user portal to manage user accounts and API keys for [@cheqd/credential-service](https://github.com/cheqd/credential-service)
+
+## 🧑‍💻🛠 Developer Guide
+
+### Setup
+
+Dependencies can be installed using NPM or any other node package manager.
+
+```bash
+npm install
+npm run build
+```
+
+### Configuration
+
+The application expects the following environment variables to be defined for the app to function:
+
+1. `ISSUER_DATABASE_URL`: The postgres database url e.g. `postgres://<user>:<password>@<host>:<port>/<database>?<query>`
+2. `ISSUER_SECRET_KEY`: A secret key for the veramo wallet
+3. `PORT`: Port number for the credential service (optional)
+4. `FEE_PAYER_MNENONIC_TESTNET`: Mnemonic for the issuer's Cosmos account to be used for testnet.
+5. `FEE_PAYER_MNENONIC_MAINNET`: Mnemonic for the issuer's Cosmos account to be used for mainnet.
+6. `MAINNET_RPC_URL`: Optional RPC URL for a node on cheqd mainnet, e.g., `https://rpc.cheqd.net`
+7. `TESTNET_RPC_URL`: Optional RPC URL for a node on cheqd testnet, e.g., `https://rpc.cheqd.network`
+8. `ISSUER_DATABASE_CERT`: Optional ca certificate parameter of the database
+
+### Run
+
+Run a postgres instance
+
+```bash
+docker pull postgres
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+```
+
+Construct the postgres url and configure the env variables mentioned above
+
+Once configured, the app can be run using NPM:
+
+```bash
+npm start
+```
+
+Or, to build and run in Docker, use the [Dockerfile](Dockerfile) provided.
+
+```bash
+docker build -t credential-service .
+```
+
+## 🐞 Bug reports & 🤔 feature requests
+
+If you notice anything not behaving how you expected, or would like to make a suggestion / request for a new feature, please create a [**new issue**](https://github.com/cheqd/service-portal/issues/new/choose) and let us know.
 
 ## 💬 Community
 

@@ -2,7 +2,7 @@
 ###         STAGE 1: Build service-portal app               ###
 ###############################################################
 
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 # Set working directory
 WORKDIR /home/node/app
@@ -21,7 +21,7 @@ RUN npm run build
 ###         STAGE 2: Build service-portal runner            ###
 ###############################################################
 
-FROM node:18-alpine AS runner
+FROM node:20-alpine AS runner
 
 # Set Node.js environment
 ENV NODE_ENV=production
